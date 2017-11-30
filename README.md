@@ -1,0 +1,2 @@
+# NOOBS
+Game details
