@@ -32,3 +32,17 @@ void Start ()
 
 ## Authors
 Ishup
+
+
+
+## Authors
+Ashraful
+
+Code for Health is upcoming
+
+
+
+
+## Gbenga Quadri
+
+I am working on the enemies of our game project, and my part of the game project is to make the the enemies atack the good girl, who is supposed to be the hero at the end of the game.
