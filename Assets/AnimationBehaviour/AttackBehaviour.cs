@@ -17,15 +17,15 @@ public class AttackBehaviour : StateMachineBehaviour {
 
         //animator.GetComponent<Player>().MeleeAttack();
 
-        if (stateInfo.IsTag("sword"))// && !stateInfo.IsTag("knife"))
+        //if (stateInfo.IsTag("sword"))// && !stateInfo.IsTag("knife"))
 
-        {
-            animator.GetComponent<Player>().MeleeAttack();
-        }
-        if (stateInfo.IsTag("knife"))
-        {
-            animator.GetComponent<Player>().MeleeAttack();
-        }
+        //{
+          //  animator.GetComponent<Player>().MeleeAttack();
+        //}
+        //if (stateInfo.IsTag("knife"))
+        //{
+         //   animator.GetComponent<Player>().MeleeAttack();
+       // }
 
 
         if (animator.tag == "Player")

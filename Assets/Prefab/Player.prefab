@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4088728269770550}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: KnifePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +104,23 @@ GameObject:
   m_Layer: 0
   m_Name: GroundPointR
   m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1995170560075596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4487601475114636}
+  - component: {fileID: 68503901455025062}
+  - component: {fileID: 114417984793381830}
+  m_Layer: 0
+  m_Name: Sword
+  m_TagString: sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,7 +171,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1201185697976758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 70.02, y: -12.11, z: 0}
+  m_LocalPosition: {x: -24.2, y: -9.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4289055131295296}
@@ -162,8 +179,22 @@ Transform:
   - {fileID: 4813381206577654}
   - {fileID: 4088728269770550}
   - {fileID: 4308649057569908}
+  - {fileID: 4487601475114636}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4487601475114636
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995170560075596}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.6100006, y: -0.5500002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4441081806788182}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4725323516197362
 Transform:
@@ -241,8 +272,8 @@ BoxCollider2D:
   m_Offset: {x: 0.21, y: -0.3}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.9, y: 5}
+    pivot: {x: 0.23, y: 0.54}
+    oldSize: {x: 5.24, y: 5.65}
     newSize: {x: 2.9, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -251,6 +282,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 4.28}
   m_EdgeRadius: 0
+--- !u!68 &68503901455025062
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995170560075596}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.7236092, y: -1.9627879}
+  - {x: -0.26247334, y: -1.9736111}
+  - {x: 0.2773826, y: -1.8244851}
+  - {x: 0.92217326, y: -1.3677533}
+  - {x: 1.4273612, y: -0.37612742}
+  - {x: 1.3448951, y: 0.5804489}
+  - {x: 0.8467872, y: 1.422179}
+  - {x: 0.1581428, y: 1.795985}
+  - {x: -0.5795357, y: 1.9934833}
+  - {x: -0.62218404, y: -1.932215}
 --- !u!70 &70745269296491658
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -298,6 +354,7 @@ MonoBehaviour:
   star: {fileID: 0}
   knifePos: {fileID: 4088728269770550}
   movementSpeed: 5
+  sword: {fileID: 68503901455025062}
   groundPoints:
   - {fileID: 4289055131295296}
   - {fileID: 4725323516197362}
@@ -306,15 +363,25 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
-  KnockBack: 0
-  KnockbackLength: 0
-  KnockBackCount: 0
-  KnockFromRight: 0
   airControl: 0
   jumpForce: 400
   knifePrefab: {fileID: 1013229397879262, guid: 01a58d9f4e6ea41829f1e7386c1d7e00,
     type: 2}
-  jumpSound: {fileID: 0}
+  JumpSound: {fileID: 0}
+  AttackSound: {fileID: 0}
+--- !u!114 &114417984793381830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1995170560075596}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd6dce6a1cd1493f97c97560045ff5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DamageToGive: 1
+  SwordSound: {fileID: 0}
 --- !u!212 &212042867624909204
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -346,10 +413,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 566784b4e9d964ca4bcef89b641e3f80, type: 3}
+  m_SortingLayerID: -81820535
+  m_SortingLayer: 3
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 7fc999e7f0ad845709f5bc2c1120c0a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

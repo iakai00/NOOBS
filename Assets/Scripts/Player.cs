@@ -69,7 +69,9 @@ public class Player : MonoBehaviour
 
     public bool OnGround { get; set; }
 
-    public GameObject jumpSound;
+    public GameObject JumpSound;
+
+    public GameObject AttackSound;
 
 	// Use this for initialization
 	void Start () 
@@ -148,12 +150,13 @@ public class Player : MonoBehaviour
         {
             myAnimator.SetTrigger("jump");
             //jumpSound.Play();
-            jumpSound.GetComponent<AudioSource>().Play();
+            JumpSound.GetComponent<AudioSource>().Play();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             myAnimator.SetTrigger("attack");
+            AttackSound.GetComponent<AudioSource>().Play();
         }
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -214,11 +217,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void MeleeAttack()
-    {
-        Debug.Log("sword");
-        sword.enabled = !sword.enabled; // to make it work when needed
-    }
 
     public void ThrowKnife(int value) //direction to throw the knife
     {
@@ -236,6 +234,13 @@ public class Player : MonoBehaviour
                 tmp.GetComponent<Knife>().Initialize(Vector2.left);
             }
         }
+    }
+
+
+    public void MeleeAttack()
+    {
+        Debug.Log("sword");
+        sword.enabled = !sword.enabled; // to make it work when needed
     }
 
     private void OnCollisionEnter2D(Collision2D other)

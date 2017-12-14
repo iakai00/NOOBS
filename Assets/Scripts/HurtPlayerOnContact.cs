@@ -20,8 +20,16 @@ public class HurtPlayerOnContact : MonoBehaviour
     {
         if (other.name == "Player")
         {
+            GetComponent<Animator>().SetTrigger("axe");
             Healthmanager.Hurtplayer(damageToGive);
 
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.name == "Player")
+        {
+            GetComponent<Animator>().ResetTrigger("axe");
         }
     }
 }

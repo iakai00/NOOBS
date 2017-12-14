@@ -52,11 +52,13 @@ GameObject:
   - component: {fileID: 212294410248294288}
   - component: {fileID: 50861290979459140}
   - component: {fileID: 58331510807551860}
-  - component: {fileID: 61248121717552726}
   - component: {fileID: 114237318311035600}
   - component: {fileID: 95673757499704462}
   - component: {fileID: 114099457900587614}
-  - component: {fileID: 114283994202786802}
+  - component: {fileID: 70838343783725876}
+  - component: {fileID: 250150682324397040}
+  - component: {fileID: 114953607242516532}
+  - component: {fileID: 114578372904410620}
   m_Layer: 10
   m_Name: 2D_GOBLIN__Run_002
   m_TagString: Enemy
@@ -71,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1882920091642512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.25, y: -7.6, z: 0.9712298}
+  m_LocalPosition: {x: -32.617, y: 8.21, z: 1.9424596}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 4549223934597816}
@@ -116,7 +118,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -140,8 +142,8 @@ CircleCollider2D:
   m_Offset: {x: -0.0000014305115, y: 0}
   serializedVersion: 2
   m_Radius: 1.68
---- !u!61 &61248121717552726
-BoxCollider2D:
+--- !u!70 &70838343783725876
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -150,21 +152,11 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0.19}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.24, y: 5.91}
-    newSize: {x: 5.24, y: 5.91}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.78, y: 3.88}
-  m_EdgeRadius: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.28}
+  m_Size: {x: 3.94, y: 3.18}
+  m_Direction: 1
 --- !u!95 &95673757499704462
 Animator:
   serializedVersion: 3
@@ -196,7 +188,7 @@ MonoBehaviour:
   enemyHealth: 5
   deathEffect: {fileID: 1600591355263616, guid: d0807250a89fa43049737eef9a1fda15,
     type: 2}
-  pointsOnDeath: 50
+  pointsOnDeath: 100
 --- !u!114 &114237318311035600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,7 +208,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   edgeCheck: {fileID: 4619618931073904}
---- !u!114 &114283994202786802
+--- !u!114 &114578372904410620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882920091642512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd87b386e8fa74b449a6f8950a850504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  other: {fileID: 0}
+--- !u!114 &114953607242516532
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -227,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3317674ae5240485dadcf18a8e0d7b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToGive: 1
+  damageToGive: 2
 --- !u!212 &212294410248294288
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -262,8 +266,8 @@ SpriteRenderer:
   m_SortingLayerID: -81820535
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b42c01f94385f490fbeb086932f8a24a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0ea7d197441184cedbe38d1d07908e6a, type: 3}
+  m_Color: {r: 1, g: 0.375, b: 0.375, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -272,3 +276,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!250 &250150682324397040
+PointEffector2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1882920091642512}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_ForceMagnitude: 100
+  m_ForceVariation: 0
+  m_DistanceScale: 50
+  m_ForceSource: 0
+  m_ForceTarget: 0
+  m_ForceMode: 1
+  m_Drag: 0
+  m_AngularDrag: 0
